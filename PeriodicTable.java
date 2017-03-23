@@ -22,9 +22,11 @@ public class PeriodicTable extends Application {
         primaryStage.setTitle("JavaFX Welcome");
         
         GridPane grid = new GridPane();
+        
         TableGui gui = new TableGui(grid);        
         
-        final Scene scene = new Scene(grid, 1024, 768);
+        final Scene scene = new Scene(grid, 1000, 650);
+        
         primaryStage.setScene(scene);
         primaryStage.show();
     }

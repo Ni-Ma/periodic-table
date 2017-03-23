@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Ellipse;
@@ -39,17 +40,13 @@ public class Model {
     final Xform cameraXform3 = new Xform();
     final Xform atomXform = new Xform();
     
-    final int nucleonRadius = 3;
+    final int nucleonRadius = 2;
 
     private static final double CAMERA_INITIAL_DISTANCE = -450;
     private static final double CAMERA_INITIAL_X_ANGLE = 70.0;
     private static final double CAMERA_INITIAL_Y_ANGLE = 320.0;
     private static final double CAMERA_NEAR_CLIP = 0.1;
     private static final double CAMERA_FAR_CLIP = 10000.0;
-    private static final double AXIS_LENGTH = 250.0;
-    private static final double HYDROGEN_ANGLE = 104.5;
-    private static final double CONTROL_MULTIPLIER = 0.1;
-    private static final double SHIFT_MULTIPLIER = 10.0;
     private static final double MOUSE_SPEED = 0.1;
     private static final double ROTATION_SPEED = 2.0;
     private static final double TRACK_SPEED = 0.3;
@@ -78,7 +75,7 @@ public class Model {
         scene.setFill(Color.GREY);
         handleMouse(scene, world);
 
-        stage.setTitle("Model");
+        stage.setTitle(element.name);
         stage.setScene(scene);
         stage.show();
 
@@ -119,27 +116,30 @@ public class Model {
                 mouseDeltaX = (mousePosX - mouseOldX);
                 mouseDeltaY = (mousePosY - mouseOldY);
 
-                double modifier = 1.0;
+                double modifier = 5.0;
 
-                if (me.isControlDown()) {
-                    modifier = CONTROL_MULTIPLIER;
-                }
-                if (me.isShiftDown()) {
-                    modifier = SHIFT_MULTIPLIER;
-                }
                 if (me.isPrimaryButtonDown()) {
                     cameraXform.ry.setAngle(cameraXform.ry.getAngle() - mouseDeltaX * MOUSE_SPEED * modifier * ROTATION_SPEED);
                     cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * MOUSE_SPEED * modifier * ROTATION_SPEED);
                 } else if (me.isSecondaryButtonDown()) {
-                    double z = camera.getTranslateZ();
-                    double newZ = z + mouseDeltaX * MOUSE_SPEED * modifier;
-                    camera.setTranslateZ(newZ);
-                } else if (me.isMiddleButtonDown()) {
                     cameraXform2.t.setX(cameraXform2.t.getX() + mouseDeltaX * MOUSE_SPEED * modifier * TRACK_SPEED);
                     cameraXform2.t.setY(cameraXform2.t.getY() + mouseDeltaY * MOUSE_SPEED * modifier * TRACK_SPEED);
-                }
+                }                   
             }
         });
+            scene.setOnScroll(new EventHandler<ScrollEvent>() {
+              @Override
+              public void handle(ScrollEvent event) {
+                double zoomFactor = 1.25;
+                double deltaY = event.getDeltaY();
+                if (deltaY < 0){
+                  zoomFactor = 2.0 - zoomFactor;
+                }
+                camera.setScaleX(camera.getScaleX() * zoomFactor);
+                camera.setScaleY(camera.getScaleY() * zoomFactor);
+                event.consume();
+              }
+            });
     }
 
     //primary method to begin the model creation.  This method calls the buildAtom method
@@ -165,8 +165,8 @@ public class Model {
         Ellipse orbit1 = EllipseBuilder.create()
                 .centerX(0)
                 .centerY(0)
-                .radiusX(50)
-                .radiusY(50)
+                .radiusX(20)
+                .radiusY(20)
                 .strokeWidth(0.5)
                 .stroke(Color.BLACK)
                 .fill(null)
@@ -175,8 +175,8 @@ public class Model {
         Ellipse orbit2 = EllipseBuilder.create()
                 .centerX(0)
                 .centerY(0)
-                .radiusX(75)
-                .radiusY(75)
+                .radiusX(40)
+                .radiusY(40)
                 .strokeWidth(0.5)
                 .stroke(Color.BLACK)
                 .fill(null)
@@ -194,12 +194,12 @@ public class Model {
             electronSpheres[i] = new Sphere(1.5);
             electronSpheres[i].setMaterial(yellowMaterial);
             if (i < 2) {
-                electronSpheres[i].setTranslateX(50);
-                electronSpheres[i].getTransforms().addAll(new Rotate((360 / 2) * i, -50, 0));
+                electronSpheres[i].setTranslateX(20);
+                electronSpheres[i].getTransforms().addAll(new Rotate((360 / 2) * i, -20, 0));
             }
             if (i >= 2 && i < 10) {
-                electronSpheres[i].setTranslateX(75);
-                electronSpheres[i].getTransforms().add(new Rotate((360 / 8) * (i - 2), -75, 0));
+                electronSpheres[i].setTranslateX(40);
+                electronSpheres[i].getTransforms().add(new Rotate((360 / 8) * (i - 2), -40, 0));
             }
         }
 
@@ -465,7 +465,7 @@ public class Model {
             new Point3D(0, 4 * nucleonRadius, 3 * nucleonRadius)
         };
 
-        addNucleus(particles, nucleonPos, nucleonRadius);
+        addNucleus(particles, nucleonPos);
 
     }
 
@@ -474,7 +474,7 @@ public class Model {
     *  nucleon in the correct position.  It then assigns the material based on an
     *  even/odd basis.
     */
-    void addNucleus(int particles, Point3D[] nucleonPos, int nucleonRadius) {
+    void addNucleus(int particles, Point3D[] nucleonPos) {
 
         final PhongMaterial redMaterial = new PhongMaterial();
         redMaterial.setDiffuseColor(Color.DARKRED);
