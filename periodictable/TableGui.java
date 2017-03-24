@@ -42,18 +42,10 @@ public class TableGui {
          */
         //Row 1 of the table
         Button btnH = new Button("1\nH");
-        btnH.setId("H");
-        btnH.setStyle("-fx-base: #bf2b00;");
-        btnH.setPrefWidth(40);
-        grid.add(btnH, 0, 1);
-        btnH.setOnAction(myHandler);
+        addButton(grid, btnH, "H", "-fx-base: #bf2b00;", 0, 1, myHandler);
 
         Button btnHe = new Button("2\nHe");
-        btnHe.setId("He");
-        btnHe.setStyle("-fx-base: #005c2b;");
-        btnHe.setPrefWidth(40);
-        grid.add(btnHe, 17, 1);
-        btnHe.setOnAction(myHandler);
+        addButton(grid, btnHe, "He", "-fx-base: #005c2b;", 17, 1, myHandler);
 
         //Row 2 of the table
         Button btnLi = new Button("3\nLi");
@@ -876,6 +868,17 @@ public class TableGui {
         btnLr.setOnAction(myHandler);
     }
 
+    /*
+     * Specifies button values and adds them to grid.
+     */
+    public static void addButton(GridPane grid, Button btn, String id, String style, int x, int y, EventHandler handler){
+        btn.setId(id);
+        btn.setStyle(style);
+        btn.setPrefWidth(40);
+        grid.add(btn, x, y);
+        btn.setOnAction(handler);
+    }
+    
     /*
     * This method is used to determine actions to perform when a button is pressed.
     * It will build the second window and populate it with information based on what
