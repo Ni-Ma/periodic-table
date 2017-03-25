@@ -39,7 +39,7 @@ public class TableGui {
     Text vaporTxt;
 
     public TableGui(GridPane grid) {
- 
+
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(4);
         grid.setVgap(4);
@@ -52,955 +52,483 @@ public class TableGui {
          */
         //Row 1 of the table
         Button btnH = new Button("1\nH");
-        btnH.setId("H");
-        btnH.setStyle("-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;");
-        btnH.setPrefSize(45, 45);
-        grid.add(btnH, 1, 1);
-        btnH.setOnAction(myHandler);
+        addButton(grid, btnH, "H", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 1, 1, myHandler, 45, 45);
 
         Button btnHe = new Button("2\nHe");
-        btnHe.setId("He");
-        btnHe.setStyle("-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia");
-        btnHe.setPrefSize(45, 45);
-        grid.add(btnHe, 18, 1);
-        btnHe.setOnAction(myHandler);
+        addButton(grid, btnHe, "He", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 1, myHandler, 45, 45);
 
         //Row 2 of the table
         Button btnLi = new Button("3\nLi");
-        btnLi.setId("Li");
-        btnLi.setStyle("-fx-base: #065179;"
-                + "-fx-font: bold 13 Georgia");
-        btnLi.setPrefSize(45, 45);
-        grid.add(btnLi, 1, 2);
-        btnLi.setOnAction(myHandler);
+        addButton(grid, btnLi, "Li", "-fx-base: #065179; "
+                + "-fx-font: bold 13 Georgia;", 1, 2, myHandler, 45, 45);
 
         Button btnBe = new Button("4\nBe");
-        btnBe.setId("Be");
-        btnBe.setStyle("-fx-base: #821d00;"
-                + "-fx-font: bold 13 Georgia");
-        btnBe.setPrefSize(45, 45);
-        grid.add(btnBe, 2, 2);
-        btnBe.setOnAction(myHandler);
+        addButton(grid, btnBe, "Be", "-fx-base: #821d00; "
+                + "-fx-font: bold 13 Georgia;", 2, 2, myHandler, 45, 45);
 
         Button btnB = new Button("5\nB");
-        btnB.setId("B");
-        btnB.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnB.setPrefSize(45, 45);
-        grid.add(btnB, 13, 2);
-        btnB.setOnAction(myHandler);
+        addButton(grid, btnB, "B", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 13, 2, myHandler, 45, 45);
 
         Button btnC = new Button("6\nC");
-        btnC.setId("C");
-        btnC.setStyle("-fx-base: #bf2b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnC.setPrefSize(45, 45);
-        grid.add(btnC, 14, 2);
-        btnC.setOnAction(myHandler);
+        addButton(grid, btnC, "C", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 14, 2, myHandler, 45, 45);
 
         Button btnN = new Button("7\nN");
-        btnN.setId("N");
-        btnN.setStyle("-fx-base: #bf2b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnN.setPrefSize(45, 45);
-        grid.add(btnN, 15, 2);
-        btnN.setOnAction(myHandler);
+        addButton(grid, btnN, "N", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 15, 2, myHandler, 45, 45);
 
         Button btnO = new Button("8\nO");
-        btnO.setId("O");
-        btnO.setStyle("-fx-base: #bf2b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnO.setPrefSize(45, 45);
-        grid.add(btnO, 16, 2);
-        btnO.setOnAction(myHandler);
+        addButton(grid, btnO, "O", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 16, 2, myHandler, 45, 45);
 
         Button btnF = new Button("9\nF");
-        btnF.setId("F");
-        btnF.setStyle("-fx-base: #00ea6c;"
-                + "-fx-font: bold 13 Georgia");
-        btnF.setPrefSize(45, 45);
-        grid.add(btnF, 17, 2);
-        btnF.setOnAction(myHandler);
+        addButton(grid, btnF, "F", "-fx-base: #00ea6c; "
+                + "-fx-font: bold 13 Georgia;", 17, 2, myHandler, 45, 45);
 
         Button btnNe = new Button("10\nNe");
-        btnNe.setId("Ne");
-        btnNe.setStyle("-fx-base: #005c2b;"
-                + "-fx-font: bold 13 Georgia");
-        btnNe.setPrefSize(45, 45);
-        grid.add(btnNe, 18, 2);
-        btnNe.setOnAction(myHandler);
+        addButton(grid, btnNe, "Ne", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 2, myHandler, 45, 45);
 
         //Row 3 of the table
         Button btnNa = new Button("11\nNa");
-        btnNa.setId("Na");
-        btnNa.setStyle("-fx-base: #065179;"
-                + "-fx-font: bold 13 Georgia");
-        btnNa.setPrefSize(45, 45);
-        grid.add(btnNa, 1, 3);
-        btnNa.setOnAction(myHandler);
+        addButton(grid, btnNa, "Na", "-fx-base: #065179; "
+                + "-fx-font: bold 13 Georgia;", 1, 3, myHandler, 45, 45);
 
         Button btnMg = new Button("12\nMg");
-        btnMg.setId("Mg");
-        btnMg.setStyle("-fx-base: #821d00;"
-                + "-fx-font: bold 13 Georgia");
-        btnMg.setPrefSize(45, 45);
-        grid.add(btnMg, 2, 3);
-        btnMg.setOnAction(myHandler);
+        addButton(grid, btnMg, "Mg", "-fx-base: #821d00; "
+                + "-fx-font: bold 13 Georgia;", 2, 3, myHandler, 45, 45);
 
         Button btnAl = new Button("13\nAl");
-        btnAl.setId("Al");
-        btnAl.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnAl.setPrefSize(45, 45);
-        grid.add(btnAl, 13, 3);
-        btnAl.setOnAction(myHandler);
+        addButton(grid, btnAl, "Al", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 13, 3, myHandler, 45, 45);
 
         Button btnSi = new Button("14\nSi");
-        btnSi.setId("Si");
-        btnSi.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnSi.setPrefSize(45, 45);
-        grid.add(btnSi, 14, 3);
-        btnSi.setOnAction(myHandler);
+        addButton(grid, btnSi, "Si", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 14, 3, myHandler, 45, 45);
 
         Button btnP = new Button("15\nP");
-        btnP.setId("P");
-        btnP.setStyle("-fx-base: #bf2b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnP.setPrefSize(45, 45);
-        grid.add(btnP, 15, 3);
-        btnP.setOnAction(myHandler);
+        addButton(grid, btnP, "P", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 15, 3, myHandler, 45, 45);
 
         Button btnS = new Button("16\nS");
-        btnS.setId("S");
-        btnS.setStyle("-fx-base: #bf2b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnS.setPrefSize(45, 45);
-        grid.add(btnS, 16, 3);
-        btnS.setOnAction(myHandler);
+        addButton(grid, btnS, "S", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 16, 3, myHandler, 45, 45);
 
         Button btnCl = new Button("17\nCl");
-        btnCl.setId("Cl");
-        btnCl.setStyle("-fx-base: #00ea6c;"
-                + "-fx-font: bold 13 Georgia");
-        btnCl.setPrefSize(45, 45);
-        grid.add(btnCl, 17, 3);
-        btnCl.setOnAction(myHandler);
+        addButton(grid, btnCl, "Cl", "-fx-base: #00ea6c; "
+                + "-fx-font: bold 13 Georgia;", 17, 3, myHandler, 45, 45);
 
         Button btnAr = new Button("18\nAr");
-        btnAr.setId("Ar");
-        btnAr.setStyle("-fx-base: #005c2b;"
-                + "-fx-font: bold 13 Georgia");
-        btnAr.setPrefSize(45, 45);
-        grid.add(btnAr, 18, 3);
-        btnAr.setOnAction(myHandler);
+        addButton(grid, btnAr, "Ar", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 3, myHandler, 45, 45);
 
         //Row 4 of the table
         Button btnK = new Button("19\nK");
-        btnK.setId("K");
-        btnK.setStyle("-fx-base: #065179;"
-                + "-fx-font: bold 13 Georgia");
-        btnK.setPrefSize(45, 45);
-        grid.add(btnK, 1, 4);
-        btnK.setOnAction(myHandler);
+        addButton(grid, btnK, "K", "-fx-base: #065179; "
+                + "-fx-font: bold 13 Georgia;", 1, 4, myHandler, 45, 45);
 
         Button btnCa = new Button("20\nCa");
-        btnCa.setId("Ca");
-        btnCa.setStyle("-fx-base: #821d00;"
-                + "-fx-font: bold 13 Georgia");
-        btnCa.setPrefSize(45, 45);
-        grid.add(btnCa, 2, 4);
-        btnCa.setOnAction(myHandler);
+        addButton(grid, btnCa, "Ca", "-fx-base: #821d00; "
+                + "-fx-font: bold 13 Georgia;", 2, 4, myHandler, 45, 45);
 
         Button btnSc = new Button("21\nSc");
-        btnSc.setId("Sc");
-        btnSc.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnSc.setPrefSize(45, 45);
-        grid.add(btnSc, 3, 4);
-        btnSc.setOnAction(myHandler);
+        addButton(grid, btnSc, "Sc", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 3, 4, myHandler, 45, 45);
 
         Button btnTi = new Button("22\nTi");
-        btnTi.setId("Ti");
-        btnTi.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnTi.setPrefSize(45, 45);
-        grid.add(btnTi, 4, 4);
-        btnTi.setOnAction(myHandler);
+        addButton(grid, btnTi, "Ti", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 4, 4, myHandler, 45, 45);
 
         Button btnV = new Button("23\nV");
-        btnV.setId("V");
-        btnV.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnV.setPrefSize(45, 45);
-        grid.add(btnV, 5, 4);
-        btnV.setOnAction(myHandler);
+        addButton(grid, btnV, "V", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 5, 4, myHandler, 45, 45);
 
         Button btnCr = new Button("24\nCr");
-        btnCr.setId("Cr");
-        btnCr.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnCr.setPrefSize(45, 45);
-        grid.add(btnCr, 6, 4);
-        btnCr.setOnAction(myHandler);
+        addButton(grid, btnCr, "Cr", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 6, 4, myHandler, 45, 45);
 
         Button btnMn = new Button("25\nMn");
-        btnMn.setId("Mn");
-        btnMn.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnMn.setPrefSize(45, 45);
-        grid.add(btnMn, 7, 4);
-        btnMn.setOnAction(myHandler);
+        addButton(grid, btnMn, "Mn", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 7, 4, myHandler, 45, 45);
 
         Button btnFe = new Button("26\nFe");
-        btnFe.setId("Fe");
-        btnFe.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnFe.setPrefSize(45, 45);
-        grid.add(btnFe, 8, 4);
-        btnFe.setOnAction(myHandler);
+        addButton(grid, btnFe, "Fe", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 8, 4, myHandler, 45, 45);
 
         Button btnCo = new Button("27\nCo");
-        btnCo.setId("Co");
-        btnCo.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnCo.setPrefSize(45, 45);
-        grid.add(btnCo, 9, 4);
-        btnCo.setOnAction(myHandler);
+        addButton(grid, btnCo, "Co", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 9, 4, myHandler, 45, 45);
 
         Button btnNi = new Button("28\nNi");
-        btnNi.setId("Ni");
-        btnNi.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnNi.setPrefSize(45, 45);
-        grid.add(btnNi, 10, 4);
-        btnNi.setOnAction(myHandler);
+        addButton(grid, btnNi, "Ni", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 10, 4, myHandler, 45, 45);
 
         Button btnCu = new Button("29\nCu");
-        btnCu.setId("Cu");
-        btnCu.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnCu.setPrefSize(45, 45);
-        grid.add(btnCu, 11, 4);
-        btnCu.setOnAction(myHandler);
+        addButton(grid, btnCu, "Cu", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 11, 4, myHandler, 45, 45);
 
         Button btnZn = new Button("30\nZn");
-        btnZn.setId("Zn");
-        btnZn.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnZn.setPrefSize(45, 45);
-        grid.add(btnZn, 12, 4);
-        btnZn.setOnAction(myHandler);
+        addButton(grid, btnZn, "Zn", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 12, 4, myHandler, 45, 45);
 
         Button btnGa = new Button("31\nGa");
-        btnGa.setId("Ga");
-        btnGa.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnGa.setPrefSize(45, 45);
-        grid.add(btnGa, 13, 4);
-        btnGa.setOnAction(myHandler);
+        addButton(grid, btnGa, "Ga", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 13, 4, myHandler, 45, 45);
 
         Button btnGe = new Button("32\nGe");
-        btnGe.setId("Ge");
-        btnGe.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnGe.setPrefSize(45, 45);
-        grid.add(btnGe, 14, 4);
-        btnGe.setOnAction(myHandler);
+        addButton(grid, btnGe, "Ge", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 14, 4, myHandler, 45, 45);
 
         Button btnAs = new Button("33\nAs");
-        btnAs.setId("As");
-        btnAs.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnAs.setPrefSize(45, 45);
-        grid.add(btnAs, 15, 4);
-        btnAs.setOnAction(myHandler);
+        addButton(grid, btnAs, "As", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 15, 4, myHandler, 45, 45);
 
         Button btnSe = new Button("34\nSe");
-        btnSe.setId("Se");
-        btnSe.setStyle("-fx-base: #bf2b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnSe.setPrefSize(45, 45);
-        grid.add(btnSe, 16, 4);
-        btnSe.setOnAction(myHandler);
+        addButton(grid, btnSe, "Se", "-fx-base: #bf2b00; "
+                + "-fx-font: bold 13 Georgia;", 16, 4, myHandler, 45, 45);
 
         Button btnBr = new Button("35\nBr");
-        btnBr.setId("Br");
-        btnBr.setStyle("-fx-base: #00ea6c;"
-                + "-fx-font: bold 13 Georgia");
-        btnBr.setPrefSize(45, 45);
-        grid.add(btnBr, 17, 4);
-        btnBr.setOnAction(myHandler);
+        addButton(grid, btnBr, "Br", "-fx-base: #00ea6c; "
+                + "-fx-font: bold 13 Georgia;", 17, 4, myHandler, 45, 45);
 
         Button btnKr = new Button("36\nKr");
-        btnKr.setId("Kr");
-        btnKr.setStyle("-fx-base: #005c2b;"
-                + "-fx-font: bold 13 Georgia");
-        btnKr.setPrefSize(45, 45);
-        grid.add(btnKr, 18, 4);
-        btnKr.setOnAction(myHandler);
+        addButton(grid, btnKr, "Kr", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 4, myHandler, 45, 45);
 
         //Row 5 of the table
         Button btnRb = new Button("37\nRb");
-        btnRb.setId("Rb");
-        btnRb.setStyle("-fx-base: #065179;"
-                + "-fx-font: bold 13 Georgia");
-        btnRb.setPrefSize(45, 45);
-        grid.add(btnRb, 1, 5);
-        btnRb.setOnAction(myHandler);
+        addButton(grid, btnRb, "Rb", "-fx-base: #065179; "
+                + "-fx-font: bold 13 Georgia;", 1, 5, myHandler, 45, 45);
 
         Button btnSr = new Button("38\nSr");
-        btnSr.setId("Sr");
-        btnSr.setStyle("-fx-base: #821d00;"
-                + "-fx-font: bold 13 Georgia");
-        btnSr.setPrefSize(45, 45);
-        grid.add(btnSr, 2, 5);
-        btnSr.setOnAction(myHandler);
+        addButton(grid, btnSr, "Sr", "-fx-base: #921d00; "
+                + "-fx-font: bold 13 Georgia;", 2, 5, myHandler, 45, 45);
 
         Button btnY = new Button("39\nY");
-        btnY.setId("Y");
-        btnY.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnY.setPrefSize(45, 45);
-        grid.add(btnY, 3, 5);
-        btnY.setOnAction(myHandler);
+        addButton(grid, btnY, "Y", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 3, 5, myHandler, 45, 45);
 
         Button btnZr = new Button("40\nZr");
-        btnZr.setId("Zr");
-        btnZr.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnZr.setPrefSize(45, 45);
-        grid.add(btnZr, 4, 5);
-        btnZr.setOnAction(myHandler);
+        addButton(grid, btnZr, "Zr", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 4, 5, myHandler, 45, 45);
 
         Button btnNb = new Button("41\nNb");
-        btnNb.setId("Nb");
-        btnNb.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnNb.setPrefSize(45, 45);
-        grid.add(btnNb, 5, 5);
-        btnNb.setOnAction(myHandler);
+        addButton(grid, btnNb, "Nb", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 5, 5, myHandler, 45, 45);
 
         Button btnMo = new Button("42\nMo");
-        btnMo.setId("Mo");
-        btnMo.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnMo.setPrefSize(45, 45);
-        grid.add(btnMo, 6, 5);
-        btnMo.setOnAction(myHandler);
+        addButton(grid, btnMo, "Mo", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 6, 5, myHandler, 45, 45);
 
         Button btnTc = new Button("43\nTc");
-        btnTc.setId("Tc");
-        btnTc.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnTc.setPrefSize(45, 45);
-        grid.add(btnTc, 7, 5);
-        btnTc.setOnAction(myHandler);
+        addButton(grid, btnTc, "Tc", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 7, 5, myHandler, 45, 45);
 
         Button btnRu = new Button("44\nRu");
-        btnRu.setId("Ru");
-        btnRu.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnRu.setPrefSize(45, 45);
-        grid.add(btnRu, 8, 5);
-        btnRu.setOnAction(myHandler);
+        addButton(grid, btnRu, "Ru", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 8, 5, myHandler, 45, 45);
 
         Button btnRh = new Button("45\nRh");
-        btnRh.setId("Rh");
-        btnRh.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnRh.setPrefSize(45, 45);
-        grid.add(btnRh, 9, 5);
-        btnRh.setOnAction(myHandler);
+        addButton(grid, btnRh, "Rh", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 9, 5, myHandler, 45, 45);
 
         Button btnPd = new Button("46\nPd");
-        btnPd.setId("Pd");
-        btnPd.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnPd.setPrefSize(45, 45);
-        grid.add(btnPd, 10, 5);
-        btnPd.setOnAction(myHandler);
+        addButton(grid, btnPd, "Pd", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 10, 5, myHandler, 45, 45);
 
         Button btnAg = new Button("47\nAg");
-        btnAg.setId("Ag");
-        btnAg.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnAg.setPrefSize(45, 45);
-        grid.add(btnAg, 11, 5);
-        btnAg.setOnAction(myHandler);
+        addButton(grid, btnAg, "Ag", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 11, 5, myHandler, 45, 45);
 
         Button btnCd = new Button("48\nCd");
-        btnCd.setId("Cd");
-        btnCd.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnCd.setPrefSize(45, 45);
-        grid.add(btnCd, 12, 5);
-        btnCd.setOnAction(myHandler);
+        addButton(grid, btnCd, "Cd", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 12, 5, myHandler, 45, 45);
 
         Button btnIn = new Button("49\nIn");
-        btnIn.setId("In");
-        btnIn.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnIn.setPrefSize(45, 45);
-        grid.add(btnIn, 13, 5);
-        btnIn.setOnAction(myHandler);
+        addButton(grid, btnIn, "In", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 13, 5, myHandler, 45, 45);
 
         Button btnSn = new Button("50\nSn");
-        btnSn.setId("Sn");
-        btnSn.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnSn.setPrefSize(45, 45);
-        grid.add(btnSn, 14, 5);
-        btnSn.setOnAction(myHandler);
+        addButton(grid, btnSn, "Sn", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 14, 5, myHandler, 45, 45);
 
         Button btnSb = new Button("51\nSb");
-        btnSb.setId("Sb");
-        btnSb.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnSb.setPrefSize(45, 45);
-        grid.add(btnSb, 15, 5);
-        btnSb.setOnAction(myHandler);
+        addButton(grid, btnSb, "Sb", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 15, 5, myHandler, 45, 45);
 
         Button btnTe = new Button("52\nTe");
-        btnTe.setId("Te");
-        btnTe.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnTe.setPrefSize(45, 45);
-        grid.add(btnTe, 16, 5);
-        btnTe.setOnAction(myHandler);
+        addButton(grid, btnTe, "Te", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 16, 5, myHandler, 45, 45);
 
         Button btnI = new Button("53\nI");
-        btnI.setId("I");
-        btnI.setStyle("-fx-base: #00ea6c;"
-                + "-fx-font: bold 13 Georgia");
-        btnI.setPrefSize(45, 45);
-        grid.add(btnI, 17, 5);
-        btnI.setOnAction(myHandler);
+        addButton(grid, btnI, "I", "-fx-base: #00ea6c; "
+                + "-fx-font: bold 13 Georgia;", 17, 5, myHandler, 45, 45);
 
         Button btnXe = new Button("54\nXe");
-        btnXe.setId("Xe");
-        btnXe.setStyle("-fx-base: #005c2b;"
-                + "-fx-font: bold 13 Georgia");
-        btnXe.setPrefSize(45, 45);
-        grid.add(btnXe, 18, 5);
-        btnXe.setOnAction(myHandler);
+        addButton(grid, btnXe, "Xe", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 5, myHandler, 45, 45);
 
         //Row 6 of the table
         Button btnCs = new Button("55\nCs");
-        btnCs.setId("Cs");
-        btnCs.setStyle("-fx-base: #065179;"
-                + "-fx-font: bold 13 Georgia");
-        btnCs.setPrefSize(45, 45);
-        grid.add(btnCs, 1, 6);
-        btnCs.setOnAction(myHandler);
+        addButton(grid, btnCs, "Cs", "-fx-base: #065179; "
+                + "-fx-font: bold 13 Georgia;", 1, 6, myHandler, 45, 45);
 
         Button btnBa = new Button("56\nBa");
-        btnBa.setId("Ba");
-        btnBa.setStyle("-fx-base: #821d00;"
-                + "-fx-font: bold 13 Georgia");
-        btnBa.setPrefSize(45, 45);
-        grid.add(btnBa, 2, 6);
-        btnBa.setOnAction(myHandler);
+        addButton(grid, btnBa, "Ba", "-fx-base: #821d00; "
+                + "-fx-font: bold 13 Georgia;", 2, 6, myHandler, 45, 45);
 
         Button btnHf = new Button("72\nHf");
-        btnHf.setId("Hf");
-        btnHf.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnHf.setPrefSize(45, 45);
-        grid.add(btnHf, 4, 6);
-        btnHf.setOnAction(myHandler);
+        addButton(grid, btnHf, "Hf", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 4, 6, myHandler, 45, 45);
 
         Button btnTa = new Button("73\nTa");
-        btnTa.setId("Ta");
-        btnTa.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnTa.setPrefSize(45, 45);
-        grid.add(btnTa, 5, 6);
-        btnTa.setOnAction(myHandler);
+        addButton(grid, btnTa, "Ta", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 5, 6, myHandler, 45, 45);
 
         Button btnW = new Button("74\nW");
-        btnW.setId("W");
-        btnW.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnW.setPrefSize(45, 45);
-        grid.add(btnW, 6, 6);
-        btnW.setOnAction(myHandler);
+        addButton(grid, btnW, "W", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 6, 6, myHandler, 45, 45);
 
         Button btnRe = new Button("75\nRe");
-        btnRe.setId("Re");
-        btnRe.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnRe.setPrefSize(45, 45);
-        grid.add(btnRe, 7, 6);
-        btnRe.setOnAction(myHandler);
+        addButton(grid, btnRe, "Re", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 7, 6, myHandler, 45, 45);
 
         Button btnOs = new Button("76\nOs");
-        btnOs.setId("Os");
-        btnOs.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnOs.setPrefSize(45, 45);
-        grid.add(btnOs, 8, 6);
-        btnOs.setOnAction(myHandler);
+        addButton(grid, btnOs, "Os", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 8, 6, myHandler, 45, 45);
 
         Button btnIr = new Button("77\nIr");
-        btnIr.setId("Ir");
-        btnIr.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnIr.setPrefSize(45, 45);
-        grid.add(btnIr, 9, 6);
-        btnIr.setOnAction(myHandler);
+        addButton(grid, btnIr, "Ir", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 9, 6, myHandler, 45, 45);
 
         Button btnPt = new Button("78\nPt");
-        btnPt.setId("Pt");
-        btnPt.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnPt.setPrefSize(45, 45);
-        grid.add(btnPt, 10, 6);
-        btnPt.setOnAction(myHandler);
+        addButton(grid, btnPt, "Pt", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 10, 6, myHandler, 45, 45);
 
         Button btnAu = new Button("79\nAu");
-        btnAu.setId("Au");
-        btnAu.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnAu.setPrefSize(45, 45);
-        grid.add(btnAu, 11, 6);
-        btnAu.setOnAction(myHandler);
+        addButton(grid, btnAu, "Au", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 11, 6, myHandler, 45, 45);
 
         Button btnHg = new Button("80\nHg");
-        btnHg.setId("Hg");
-        btnHg.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnHg.setPrefSize(45, 45);
-        grid.add(btnHg, 12, 6);
-        btnHg.setOnAction(myHandler);
+        addButton(grid, btnHg, "Hg", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 12, 6, myHandler, 45, 45);
 
         Button btnTl = new Button("81\nTl");
-        btnTl.setId("Tl");
-        btnTl.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnTl.setPrefSize(45, 45);
-        grid.add(btnTl, 13, 6);
-        btnTl.setOnAction(myHandler);
+        addButton(grid, btnTl, "Tl", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 13, 6, myHandler, 45, 45);
 
         Button btnPb = new Button("82\nPb");
-        btnPb.setId("Pb");
-        btnPb.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnPb.setPrefSize(45, 45);
-        grid.add(btnPb, 14, 6);
-        btnPb.setOnAction(myHandler);
+        addButton(grid, btnPb, "Pb", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 14, 6, myHandler, 45, 45);
 
         Button btnBi = new Button("83\nBi");
-        btnBi.setId("Bi");
-        btnBi.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnBi.setPrefSize(45, 45);
-        grid.add(btnBi, 15, 6);
-        btnBi.setOnAction(myHandler);
+        addButton(grid, btnBi, "Bi", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 15, 6, myHandler, 45, 45);
 
         Button btnPo = new Button("84\nPo");
-        btnPo.setId("Po");
-        btnPo.setStyle("-fx-base: #ff6235;"
-                + "-fx-font: bold 13 Georgia");
-        btnPo.setPrefSize(45, 45);
-        grid.add(btnPo, 16, 6);
-        btnPo.setOnAction(myHandler);
+        addButton(grid, btnPo, "Po", "-fx-base: #ff6235; "
+                + "-fx-font: bold 13 Georgia;", 16, 6, myHandler, 45, 45);
 
         Button btnAt = new Button("85\nAt");
-        btnAt.setId("At");
-        btnAt.setStyle("-fx-base: #00ea6c;"
-                + "-fx-font: bold 13 Georgia");
-        btnAt.setPrefSize(45, 45);
-        grid.add(btnAt, 17, 6);
-        btnAt.setOnAction(myHandler);
+        addButton(grid, btnAt, "At", "-fx-base: #00ea6c; "
+                + "-fx-font: bold 13 Georgia;", 17, 6, myHandler, 45, 45);
 
         Button btnRn = new Button("86\nRn");
-        btnRn.setId("Rn");
-        btnRn.setStyle("-fx-base: #005c2b;"
-                + "-fx-font: bold 13 Georgia");
-        btnRn.setPrefSize(45, 45);
-        grid.add(btnRn, 18, 6);
-        btnRn.setOnAction(myHandler);
+        addButton(grid, btnRn, "Rn", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 6, myHandler, 45, 45);
 
         //Row 7 of the table
         Button btnFr = new Button("87\nFr");
-        btnFr.setId("Fr");
-        btnFr.setStyle("-fx-base: #065179;"
-                + "-fx-font: bold 13 Georgia");
-        btnFr.setPrefSize(45, 45);
-        grid.add(btnFr, 1, 7);
-        btnFr.setOnAction(myHandler);
+        addButton(grid, btnFr, "Fr", "-fx-base: #065179; "
+                + "-fx-font: bold 13 Georgia;", 1, 7, myHandler, 45, 45);
 
         Button btnRa = new Button("88\nRa");
-        btnRa.setId("Ra");
-        btnRa.setStyle("-fx-base: #821d00;"
-                + "-fx-font: bold 13 Georgia");
-        btnRa.setPrefSize(45, 45);
-        grid.add(btnRa, 2, 7);
-        btnRa.setOnAction(myHandler);
+        addButton(grid, btnRa, "Ra", "-fx-base: #921d00; "
+                + "-fx-font: bold 13 Georgia;", 2, 7, myHandler, 45, 45);
 
         Button btnRf = new Button("104\nRf");
-        btnRf.setId("Rf");
-        btnRf.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnRf.setPrefSize(45, 45);
-        grid.add(btnRf, 4, 7);
-        btnRf.setOnAction(myHandler);
+        addButton(grid, btnRf, "Rf", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 4, 7, myHandler, 45, 45);
 
         Button btnDb = new Button("105\nDb");
-        btnDb.setId("Db");
-        btnDb.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnDb.setPrefSize(45, 45);
-        grid.add(btnDb, 5, 7);
-        btnDb.setOnAction(myHandler);
+        addButton(grid, btnDb, "Db", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 5, 7, myHandler, 45, 45);
 
         Button btnSg = new Button("106\nSg");
-        btnSg.setId("Sg");
-        btnSg.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnSg.setPrefSize(45, 45);
-        grid.add(btnSg, 6, 7);
-        btnSg.setOnAction(myHandler);
+        addButton(grid, btnSg, "Sg", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 6, 7, myHandler, 45, 45);
 
         Button btnBh = new Button("107\nBh");
-        btnBh.setId("Bh");
-        btnBh.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnBh.setPrefSize(45, 45);
-        grid.add(btnBh, 7, 7);
-        btnBh.setOnAction(myHandler);
+        addButton(grid, btnBh, "Bh", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 7, 7, myHandler, 45, 45);
 
         Button btnHs = new Button("108\nHs");
-        btnHs.setId("Hs");
-        btnHs.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnHs.setPrefSize(45, 45);
-        grid.add(btnHs, 8, 7);
-        btnHs.setOnAction(myHandler);
+        addButton(grid, btnHs, "Hs", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 8, 7, myHandler, 45, 45);
 
         Button btnMt = new Button("109\nMt");
-        btnMt.setId("Mt");
-        btnMt.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnMt.setPrefSize(45, 45);
-        grid.add(btnMt, 9, 7);
-        btnMt.setOnAction(myHandler);
+        addButton(grid, btnMt, "Mt", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 9, 7, myHandler, 45, 45);
 
         Button btnDs = new Button("110\nDs");
-        btnDs.setId("Ds");
-        btnDs.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnDs.setPrefSize(45, 45);
-        grid.add(btnDs, 10, 7);
-        btnDs.setOnAction(myHandler);
+        addButton(grid, btnDs, "Ds", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 10, 7, myHandler, 45, 45);
 
         Button btnRg = new Button("111\nRg");
-        btnRg.setId("Rg");
-        btnRg.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnRg.setPrefSize(45, 45);
-        grid.add(btnRg, 11, 7);
-        btnRg.setOnAction(myHandler);
+        addButton(grid, btnRg, "Rg", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 11, 7, myHandler, 45, 45);
 
         Button btnCn = new Button("112\nCn");
-        btnCn.setId("Cn");
-        btnCn.setStyle("-fx-base: #ff8b00;"
-                + "-fx-font: bold 13 Georgia");
-        btnCn.setPrefSize(45, 45);
-        grid.add(btnCn, 12, 7);
-        btnCn.setOnAction(myHandler);
+        addButton(grid, btnCn, "Cn", "-fx-base: #ff8b00; "
+                + "-fx-font: bold 13 Georgia;", 12, 7, myHandler, 45, 45);
 
         Button btnNh = new Button("113\nNh");
-        btnNh.setId("Nh");
-        btnNh.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnNh.setPrefSize(45, 45);
-        grid.add(btnNh, 13, 7);
-        btnNh.setOnAction(myHandler);
+        addButton(grid, btnNh, "Nh", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 13, 7, myHandler, 45, 45);
 
         Button btnFl = new Button("114\nFl");
-        btnFl.setId("Fl");
-        btnFl.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnFl.setPrefSize(45, 45);
-        grid.add(btnFl, 14, 7);
-        btnFl.setOnAction(myHandler);
+        addButton(grid, btnFl, "Fl", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 14, 7, myHandler, 45, 45);
 
         Button btnMc = new Button("115\nMc");
-        btnMc.setId("Mc");
-        btnMc.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnMc.setPrefSize(45, 45);
-        grid.add(btnMc, 15, 7);
-        btnMc.setOnAction(myHandler);
+        addButton(grid, btnMc, "Mc", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 15, 7, myHandler, 45, 45);
 
         Button btnLv = new Button("116\nLv");
-        btnLv.setId("Lv");
-        btnLv.setStyle("-fx-base: #0b98e4;"
-                + "-fx-font: bold 13 Georgia");
-        btnLv.setPrefSize(45, 45);
-        grid.add(btnLv, 16, 7);
-        btnLv.setOnAction(myHandler);
+        addButton(grid, btnLv, "Lv", "-fx-base: #0b98e4; "
+                + "-fx-font: bold 13 Georgia;", 16, 7, myHandler, 45, 45);
 
         Button btnTs = new Button("117\nTs");
-        btnTs.setId("Ts");
-        btnTs.setStyle("-fx-base: #00ea6c;"
-                + "-fx-font: bold 13 Georgia");
-        btnTs.setPrefSize(45, 45);
-        grid.add(btnTs, 17, 7);
-        btnTs.setOnAction(myHandler);
+        addButton(grid, btnTs, "Ts", "-fx-base: #00ea6c; "
+                + "-fx-font: bold 13 Georgia;", 17, 7, myHandler, 45, 45);
 
         Button btnOg = new Button("118\nOg");
-        btnOg.setId("Og");
-        btnOg.setStyle("-fx-base: #005c2b;"
-                + "-fx-font: bold 13 Georgia");
-        btnOg.setPrefSize(45, 45);
-        grid.add(btnOg, 18, 7);
-        btnOg.setOnAction(myHandler);
+        addButton(grid, btnOg, "Og", "-fx-base: #005c2b; "
+                + "-fx-font: bold 13 Georgia;", 18, 7, myHandler, 45, 45);
 
         //elements 57-71 and 89-103
         Button btnLa = new Button("57\nLa");
-        btnLa.setId("La");
-        btnLa.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnLa.setPrefSize(45, 45);
-        grid.add(btnLa, 4, 20);
-        btnLa.setOnAction(myHandler);
+        addButton(grid, btnLa, "La", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 4, 20, myHandler, 45, 45);
 
         Button btnCe = new Button("58\nCe");
-        btnCe.setId("Ce");
-        btnCe.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnCe.setPrefSize(45, 45);
-        grid.add(btnCe, 5, 20);
-        btnCe.setOnAction(myHandler);
+        addButton(grid, btnCe, "Ce", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 5, 20, myHandler, 45, 45);
 
         Button btnPr = new Button("59\nPr");
-        btnPr.setId("Pr");
-        btnPr.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnPr.setPrefSize(45, 45);
-        grid.add(btnPr, 6, 20);
-        btnPr.setOnAction(myHandler);
+        addButton(grid, btnPr, "Pr", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 6, 20, myHandler, 45, 45);
 
         Button btnNd = new Button("60\nNd");
-        btnNd.setId("Nd");
-        btnNd.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnNd.setPrefSize(45, 45);
-        grid.add(btnNd, 7, 20);
-        btnNd.setOnAction(myHandler);
+        addButton(grid, btnNd, "Nd", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 7, 20, myHandler, 45, 45);
 
         Button btnPm = new Button("61\nPm");
-        btnPm.setId("Pm");
-        btnPm.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnPm.setPrefSize(45, 45);
-        grid.add(btnPm, 8, 20);
-        btnPm.setOnAction(myHandler);
+        addButton(grid, btnPm, "Pm", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 8, 20, myHandler, 45, 45);
 
         Button btnSm = new Button("62\nSm");
-        btnSm.setId("Sm");
-        btnSm.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnSm.setPrefSize(45, 45);
-        grid.add(btnSm, 9, 20);
-        btnSm.setOnAction(myHandler);
+        addButton(grid, btnSm, "Sm", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 9, 20, myHandler, 45, 45);
 
         Button btnEu = new Button("63\nEu");
-        btnEu.setId("Eu");
-        btnEu.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnEu.setPrefSize(45, 45);
-        grid.add(btnEu, 10, 20);
-        btnEu.setOnAction(myHandler);
+        addButton(grid, btnEu, "Eu", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 10, 20, myHandler, 45, 45);
 
         Button btnGd = new Button("64\nGd");
-        btnGd.setId("Gd");
-        btnGd.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnGd.setPrefSize(45, 45);
-        grid.add(btnGd, 11, 20);
-        btnGd.setOnAction(myHandler);
+        addButton(grid, btnGd, "Gd", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 11, 20, myHandler, 45, 45);
 
         Button btnTb = new Button("65\nTb");
-        btnTb.setId("Tb");
-        btnTb.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnTb.setPrefSize(45, 45);
-        grid.add(btnTb, 12, 20);
-        btnTb.setOnAction(myHandler);
+        addButton(grid, btnTb, "Tb", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 12, 20, myHandler, 45, 45);
 
         Button btnDy = new Button("66\nDy");
-        btnDy.setId("Dy");
-        btnDy.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnDy.setPrefSize(45, 45);
-        grid.add(btnDy, 13, 20);
-        btnDy.setOnAction(myHandler);
+        addButton(grid, btnDy, "Dy", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 13, 20, myHandler, 45, 45);
 
         Button btnHo = new Button("67\nHo");
-        btnHo.setId("Ho");
-        btnHo.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnHo.setPrefSize(45, 45);
-        grid.add(btnHo, 14, 20);
-        btnHo.setOnAction(myHandler);
+        addButton(grid, btnHo, "Ho", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 14, 20, myHandler, 45, 45);
 
         Button btnEr = new Button("68\nEr");
-        btnEr.setId("Er");
-        btnEr.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnEr.setPrefSize(45, 45);
-        grid.add(btnEr, 15, 20);
-        btnEr.setOnAction(myHandler);
+        addButton(grid, btnEr, "Er", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 15, 20, myHandler, 45, 45);
 
         Button btnTm = new Button("69\nTm");
-        btnTm.setId("Tm");
-        btnTm.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnTm.setPrefSize(45, 45);
-        grid.add(btnTm, 16, 20);
-        btnTm.setOnAction(myHandler);
+        addButton(grid, btnTm, "Tm", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 16, 20, myHandler, 45, 45);
 
         Button btnYb = new Button("70\nYb");
-        btnYb.setId("Yb");
-        btnYb.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnYb.setPrefSize(45, 45);
-        grid.add(btnYb, 17, 20);
-        btnYb.setOnAction(myHandler);
+        addButton(grid, btnYb, "Yb", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 17, 20, myHandler, 45, 45);
 
         Button btnLu = new Button("71\nLu");
-        btnLu.setId("Lu");
-        btnLu.setStyle("-fx-base: #824700;"
-                + "-fx-font: bold 13 Georgia");
-        btnLu.setPrefSize(45, 45);
-        grid.add(btnLu, 18, 20);
-        btnLu.setOnAction(myHandler);
+        addButton(grid, btnLu, "Lu", "-fx-base: #824700; "
+                + "-fx-font: bold 13 Georgia;", 18, 20, myHandler, 45, 45);
 
         Button btnAc = new Button("89\nAc");
-        btnAc.setId("Ac");
-        btnAc.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnAc.setPrefSize(45, 45);
-        grid.add(btnAc, 4, 21);
-        btnAc.setOnAction(myHandler);
+        addButton(grid, btnAc, "Ac", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 4, 21, myHandler, 45, 45);
 
         Button btnTh = new Button("90\nTh");
-        btnTh.setId("Th");
-        btnTh.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnTh.setPrefSize(45, 45);
-        grid.add(btnTh, 5, 21);
-        btnTh.setOnAction(myHandler);
+        addButton(grid, btnTh, "Th", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 5, 21, myHandler, 45, 45);
 
         Button btnPa = new Button("91\nPa");
-        btnPa.setId("Pa");
-        btnPa.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnPa.setPrefSize(45, 45);
-        grid.add(btnPa, 6, 21);
-        btnPa.setOnAction(myHandler);
+        addButton(grid, btnPa, "Pa", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 6, 21, myHandler, 45, 45);
 
         Button btnU = new Button("92\nU");
-        btnU.setId("U");
-        btnU.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnU.setPrefSize(45, 45);
-        grid.add(btnU, 7, 21);
-        btnU.setOnAction(myHandler);
+        addButton(grid, btnU, "U", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 7, 21, myHandler, 45, 45);
 
         Button btnNp = new Button("93\nNp");
-        btnNp.setId("Np");
-        btnNp.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnNp.setPrefSize(45, 45);
-        grid.add(btnNp, 8, 21);
-        btnNp.setOnAction(myHandler);
+        addButton(grid, btnNp, "Np", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 8, 21, myHandler, 45, 45);
 
         Button btnPu = new Button("94\nPu");
-        btnPu.setId("Pu");
-        btnPu.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnPu.setPrefSize(45, 45);
-        grid.add(btnPu, 9, 21);
-        btnPu.setOnAction(myHandler);
+        addButton(grid, btnPu, "Pu", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 9, 21, myHandler, 45, 45);
 
         Button btnAm = new Button("95\nAm");
-        btnAm.setId("Am");
-        btnAm.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnAm.setPrefSize(45, 45);
-        grid.add(btnAm, 10, 21);
-        btnAm.setOnAction(myHandler);
+        addButton(grid, btnAm, "Am", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 10, 21, myHandler, 45, 45);
 
         Button btnCm = new Button("96\nCm");
-        btnCm.setId("Cm");
-        btnCm.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnCm.setPrefSize(45, 45);
-        grid.add(btnCm, 11, 21);
-        btnCm.setOnAction(myHandler);
+        addButton(grid, btnCm, "Cm", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 11, 21, myHandler, 45, 45);
 
         Button btnBk = new Button("97\nBk");
-        btnBk.setId("Bk");
-        btnBk.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnBk.setPrefSize(45, 45);
-        grid.add(btnBk, 12, 21);
-        btnBk.setOnAction(myHandler);
+        addButton(grid, btnBk, "Bk", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 12, 21, myHandler, 45, 45);
 
         Button btnCf = new Button("98\nCf");
-        btnCf.setId("Cf");
-        btnCf.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnCf.setPrefSize(45, 45);
-        grid.add(btnCf, 13, 21);
-        btnCf.setOnAction(myHandler);
+        addButton(grid, btnCf, "Cf", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 13, 21, myHandler, 45, 45);
 
         Button btnEs = new Button("99\nEs");
-        btnEs.setId("Es");
-        btnEs.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnEs.setPrefSize(45, 45);
-        grid.add(btnEs, 14, 21);
-        btnEs.setOnAction(myHandler);
+        addButton(grid, btnEs, "Es", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 14, 21, myHandler, 45, 45);
 
         Button btnFm = new Button("100\nFm");
-        btnFm.setId("Fm");
-        btnFm.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnFm.setPrefSize(45, 45);
-        grid.add(btnFm, 15, 21);
-        btnFm.setOnAction(myHandler);
+        addButton(grid, btnFm, "Fm", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 15, 21, myHandler, 45, 45);
 
         Button btnMd = new Button("101\nMd");
-        btnMd.setId("Md");
-        btnMd.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnMd.setPrefSize(45, 45);
-        grid.add(btnMd, 16, 21);
-        btnMd.setOnAction(myHandler);
+        addButton(grid, btnMd, "Md", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 16, 21, myHandler, 45, 45);
 
         Button btnNo = new Button("102\nNo");
-        btnNo.setId("No");
-        btnNo.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnNo.setPrefSize(45, 45);
-        grid.add(btnNo, 17, 21);
-        btnNo.setOnAction(myHandler);
+        addButton(grid, btnNo, "No", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 17, 21, myHandler, 45, 45);
 
         Button btnLr = new Button("103\nLr");
-        btnLr.setId("Lr");
-        btnLr.setStyle("-fx-base: #ffa335;"
-                + "-fx-font: bold 13 Georgia");
-        btnLr.setPrefSize(45, 45);
-        grid.add(btnLr, 18, 21);
-        btnLr.setOnAction(myHandler);
+        addButton(grid, btnLr, "Lr", "-fx-base: #ffa335; "
+                + "-fx-font: bold 13 Georgia;", 18, 21, myHandler, 45, 45);
 
         Label[] periods = new Label[18];
 
@@ -1029,130 +557,56 @@ public class TableGui {
         * means.  It builds a horizontal box containing one centered label.  This is then
         * placed into the grid pane.  The HBox is used because this was the only way to 
         * set a background color behind the text.
-        */
-        
+         */
         HBox metalloidsBox = new HBox();
-        metalloidsBox.setPadding(new Insets(1, 1, 1, 1));
-        metalloidsBox.setSpacing(1);
-        metalloidsBox.setStyle("-fx-background-color: #ff6235");
         Label metalloidsLbl = new Label("Metalloids");
-        metalloidsLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: BLACK");
-        metalloidsLbl.setPrefSize(90, 35);
-        metalloidsLbl.setAlignment(Pos.CENTER);
-        metalloidsBox.getChildren().addAll(metalloidsLbl);
-        grid.add(metalloidsBox, 3, 1, 2, 1);
+        addKey(metalloidsBox, grid, metalloidsLbl, 3, 1, "-fx-background-color: #ff6235",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: BLACK");
 
         HBox otherNonBox = new HBox();
-        otherNonBox.setPadding(new Insets(1, 1, 1, 1));
-        otherNonBox.setSpacing(1);
-        otherNonBox.setStyle("-fx-background-color: #bf2b00");
         Label otherNonLbl = new Label("Other Non-Metals");
-        otherNonLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: WHITE");
-        otherNonLbl.setPrefSize(90, 35);
-        otherNonLbl.setAlignment(Pos.CENTER);
-        otherNonLbl.setWrapText(true);
-        otherNonBox.getChildren().addAll(otherNonLbl);
-        grid.add(otherNonBox, 5, 1, 2, 1);
+        addKey(otherNonBox, grid, otherNonLbl, 5, 1, "-fx-background-color: #bf2b00",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: WHITE");
 
         HBox halogensBox = new HBox();
-        halogensBox.setPadding(new Insets(1, 1, 1, 1));
-        halogensBox.setSpacing(1);
-        halogensBox.setStyle("-fx-background-color: #00ea6c");
         Label halogensLbl = new Label("Halogens");
-        halogensLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: BLACK");
-        halogensLbl.setPrefSize(90, 35);
-        halogensLbl.setAlignment(Pos.CENTER);
-        halogensBox.getChildren().addAll(halogensLbl);
-        grid.add(halogensBox, 7, 1, 2, 1);
+        addKey(halogensBox, grid, halogensLbl, 7, 1, "-fx-background-color: #00ea6c",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: BLACK");
 
         HBox nobleBox = new HBox();
-        nobleBox.setPadding(new Insets(1, 1, 1, 1));
-        nobleBox.setSpacing(1);
-        nobleBox.setStyle("-fx-background-color: #005c2b");
         Label nobleLbl = new Label("Nobel Gases");
-        nobleLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: WHITE");
-        nobleLbl.setPrefSize(90, 35);
-        nobleLbl.setAlignment(Pos.CENTER);
-        nobleBox.getChildren().addAll(nobleLbl);
-        grid.add(nobleBox, 9, 1, 2, 1);
+        addKey(nobleBox, grid, nobleLbl, 9, 1, "-fx-background-color: #005c2b",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: WHITE");
 
         HBox alkaliBox = new HBox();
-        alkaliBox.setPadding(new Insets(1, 1, 1, 1));
-        alkaliBox.setSpacing(1);
-        alkaliBox.setStyle("-fx-background-color: #065179");
         Label alkaliLbl = new Label("Alkali Metals");
-        alkaliLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: WHITE");
-        alkaliLbl.setPrefSize(90, 35);
-        alkaliLbl.setAlignment(Pos.CENTER);
-        alkaliLbl.setWrapText(true);
-        alkaliBox.getChildren().addAll(alkaliLbl);
-        grid.add(alkaliBox, 11, 1, 2, 1);
+        addKey(alkaliBox, grid, alkaliLbl, 11, 1, "-fx-background-color: #065179",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: WHITE");
 
         HBox earthBox = new HBox();
-        earthBox.setPadding(new Insets(1, 1, 1, 1));
-        earthBox.setSpacing(1);
-        earthBox.setStyle("-fx-background-color: #821d00");
         Label earthLbl = new Label("Alkaline Earth Metals");
-        earthLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: WHITE");
-        earthLbl.setPrefSize(90, 35);
-        earthLbl.setAlignment(Pos.CENTER);
-        earthLbl.setWrapText(true);
-        earthBox.getChildren().addAll(earthLbl);
-        grid.add(earthBox, 3, 2, 2, 1);
+        addKey(earthBox, grid, earthLbl, 3, 2, "-fx-background-color: #821d00",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: WHITE");
 
         HBox lanthanoidsBox = new HBox();
-        lanthanoidsBox.setPadding(new Insets(1, 1, 1, 1));
-        lanthanoidsBox.setSpacing(1);
-        lanthanoidsBox.setStyle("-fx-background-color: #824700");
         Label lanthanoidsLbl = new Label("Lanthanoids");
-        lanthanoidsLbl.setStyle("-fx-font: bold 12 Georgia;"
-                + "-fx-text-fill: WHITE");
-        lanthanoidsLbl.setPrefSize(90, 35);
-        lanthanoidsLbl.setAlignment(Pos.CENTER);
-        lanthanoidsBox.getChildren().addAll(lanthanoidsLbl);
-        grid.add(lanthanoidsBox, 5, 2, 2, 1);
-        
+        addKey(lanthanoidsBox, grid, lanthanoidsLbl, 5, 2, "-fx-background-color: #824700",
+                "-fx-font: bold 12 Georgia; -fx-text-fill: WHITE");
+
         HBox actinoidsBox = new HBox();
-        actinoidsBox.setPadding(new Insets(1, 1, 1, 1));
-        actinoidsBox.setSpacing(1);
-        actinoidsBox.setStyle("-fx-background-color: #ffa335");
         Label actinoidsLbl = new Label("Actinoids");
-        actinoidsLbl.setStyle("-fx-font: bold 12 Georgia;");
-        actinoidsLbl.setPrefSize(90, 35);
-        actinoidsLbl.setAlignment(Pos.CENTER);
-        actinoidsBox.getChildren().addAll(actinoidsLbl);
-        grid.add(actinoidsBox, 7, 2, 2, 1);
-        
+        addKey(actinoidsBox, grid, actinoidsLbl, 7, 2, "-fx-background-color: #ffa335",
+                "-fx-font: bold 12 Georgia;");
+
         HBox transitionBox = new HBox();
-        transitionBox.setPadding(new Insets(1, 1, 1, 1));
-        transitionBox.setSpacing(1);
-        transitionBox.setStyle("-fx-background-color: #ff8b00");
         Label transitionLbl = new Label("Transition Metals");
-        transitionLbl.setStyle("-fx-font: bold 12 Georgia;");
-        transitionLbl.setPrefSize(90, 35);
-        transitionLbl.setAlignment(Pos.CENTER);
-        transitionLbl.setWrapText(true);
-        transitionBox.getChildren().addAll(transitionLbl);
-        grid.add(transitionBox, 9, 2, 2, 1);
-        
+        addKey(transitionBox, grid, transitionLbl, 9, 2, "-fx-background-color: #ff8b00",
+                "-fx-font: bold 12 Georgia;");
+
         HBox postBox = new HBox();
-        postBox.setPadding(new Insets(1, 1, 1, 1));
-        postBox.setSpacing(1);
-        postBox.setStyle("-fx-background-color: #0b98e4");
         Label postLbl = new Label("Post Transition Metals");
-        postLbl.setStyle("-fx-font: bold 11 Georgia;"
-                + "-fx-text-fill: BLACK");
-        postLbl.setPrefSize(90, 35);
-        postLbl.setAlignment(Pos.CENTER);
-        postLbl.setWrapText(true);
-        postBox.getChildren().addAll(postLbl);
-        grid.add(postBox, 11, 2, 2, 1);
+        addKey(postBox, grid, postLbl, 11, 2, "-fx-background-color: #0b98e4",
+                "-fx-font: bold 11 Georgia; -fx-text-fill: BLACK");
 
     }
 
@@ -1614,5 +1068,37 @@ public class TableGui {
             elementModel.displayModel(element);
         }
     };
+
+    /*
+    * Constructs each button then places in the correct position in the GridPane to form
+    * the periodic table.
+    */
+    private static void addButton(GridPane grid, Button btn, String id, String style,
+            int x, int y, EventHandler handler, int sizeX, int sizeY) {
+
+        btn.setId(id);
+        btn.setStyle(style);
+        btn.setPrefWidth(40);
+        grid.add(btn, x, y);
+        btn.setOnAction(handler);
+        btn.setPrefSize(sizeX, sizeY);
+
+    }
+
+    /*
+    * Constructs and formats each portion of the key, then places in correct location
+    * in the GridPane.
+    */
+    private static void addKey(HBox hBox, GridPane grid, Label lbl, int x, int y, String boxStyle, String lblStyle) {
+        hBox.setPadding(new Insets(1, 1, 1, 1));
+        hBox.setSpacing(1);
+        hBox.setStyle(boxStyle);
+        lbl.setStyle(lblStyle);
+        lbl.setPrefSize(90, 35);
+        lbl.setAlignment(Pos.CENTER);
+        lbl.setWrapText(true);
+        hBox.getChildren().addAll(lbl);
+        grid.add(hBox, x, y, 2, 1);
+    }
 
 }
