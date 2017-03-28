@@ -5,6 +5,8 @@
  */
 package periodictable;
 
+import java.io.*;
+import java.util.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -31,6 +33,7 @@ import javafx.stage.Stage;
  */
 public class TableGui {
 
+    List<Button> btnList = new ArrayList<Button>();
     Element element;
     Text phaseTxt;
     Text meltTxt;
@@ -38,7 +41,8 @@ public class TableGui {
     Text fusionTxt;
     Text vaporTxt;
 
-    public TableGui(GridPane grid) {
+    @SuppressWarnings("ConvertToTryWithResources")
+    public TableGui(GridPane grid) throws IOException {
 
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(4);
@@ -47,488 +51,24 @@ public class TableGui {
 
         grid.setStyle("-fx-background-color: #001018;");
 
-        /*
-        *Construct buttons and add them to the GridPane
-         */
-        //Row 1 of the table
-        Button btnH = new Button("1\nH");
-        addButton(grid, btnH, "H", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 1, 1, myHandler, 45, 45);
-
-        Button btnHe = new Button("2\nHe");
-        addButton(grid, btnHe, "He", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 1, myHandler, 45, 45);
-
-        //Row 2 of the table
-        Button btnLi = new Button("3\nLi");
-        addButton(grid, btnLi, "Li", "-fx-base: #065179; "
-                + "-fx-font: bold 13 Georgia;", 1, 2, myHandler, 45, 45);
-
-        Button btnBe = new Button("4\nBe");
-        addButton(grid, btnBe, "Be", "-fx-base: #821d00; "
-                + "-fx-font: bold 13 Georgia;", 2, 2, myHandler, 45, 45);
-
-        Button btnB = new Button("5\nB");
-        addButton(grid, btnB, "B", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 13, 2, myHandler, 45, 45);
-
-        Button btnC = new Button("6\nC");
-        addButton(grid, btnC, "C", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 14, 2, myHandler, 45, 45);
-
-        Button btnN = new Button("7\nN");
-        addButton(grid, btnN, "N", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 15, 2, myHandler, 45, 45);
-
-        Button btnO = new Button("8\nO");
-        addButton(grid, btnO, "O", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 16, 2, myHandler, 45, 45);
-
-        Button btnF = new Button("9\nF");
-        addButton(grid, btnF, "F", "-fx-base: #00ea6c; "
-                + "-fx-font: bold 13 Georgia;", 17, 2, myHandler, 45, 45);
-
-        Button btnNe = new Button("10\nNe");
-        addButton(grid, btnNe, "Ne", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 2, myHandler, 45, 45);
-
-        //Row 3 of the table
-        Button btnNa = new Button("11\nNa");
-        addButton(grid, btnNa, "Na", "-fx-base: #065179; "
-                + "-fx-font: bold 13 Georgia;", 1, 3, myHandler, 45, 45);
-
-        Button btnMg = new Button("12\nMg");
-        addButton(grid, btnMg, "Mg", "-fx-base: #821d00; "
-                + "-fx-font: bold 13 Georgia;", 2, 3, myHandler, 45, 45);
-
-        Button btnAl = new Button("13\nAl");
-        addButton(grid, btnAl, "Al", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 13, 3, myHandler, 45, 45);
-
-        Button btnSi = new Button("14\nSi");
-        addButton(grid, btnSi, "Si", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 14, 3, myHandler, 45, 45);
-
-        Button btnP = new Button("15\nP");
-        addButton(grid, btnP, "P", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 15, 3, myHandler, 45, 45);
-
-        Button btnS = new Button("16\nS");
-        addButton(grid, btnS, "S", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 16, 3, myHandler, 45, 45);
-
-        Button btnCl = new Button("17\nCl");
-        addButton(grid, btnCl, "Cl", "-fx-base: #00ea6c; "
-                + "-fx-font: bold 13 Georgia;", 17, 3, myHandler, 45, 45);
-
-        Button btnAr = new Button("18\nAr");
-        addButton(grid, btnAr, "Ar", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 3, myHandler, 45, 45);
-
-        //Row 4 of the table
-        Button btnK = new Button("19\nK");
-        addButton(grid, btnK, "K", "-fx-base: #065179; "
-                + "-fx-font: bold 13 Georgia;", 1, 4, myHandler, 45, 45);
-
-        Button btnCa = new Button("20\nCa");
-        addButton(grid, btnCa, "Ca", "-fx-base: #821d00; "
-                + "-fx-font: bold 13 Georgia;", 2, 4, myHandler, 45, 45);
-
-        Button btnSc = new Button("21\nSc");
-        addButton(grid, btnSc, "Sc", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 3, 4, myHandler, 45, 45);
-
-        Button btnTi = new Button("22\nTi");
-        addButton(grid, btnTi, "Ti", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 4, 4, myHandler, 45, 45);
-
-        Button btnV = new Button("23\nV");
-        addButton(grid, btnV, "V", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 5, 4, myHandler, 45, 45);
-
-        Button btnCr = new Button("24\nCr");
-        addButton(grid, btnCr, "Cr", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 6, 4, myHandler, 45, 45);
-
-        Button btnMn = new Button("25\nMn");
-        addButton(grid, btnMn, "Mn", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 7, 4, myHandler, 45, 45);
-
-        Button btnFe = new Button("26\nFe");
-        addButton(grid, btnFe, "Fe", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 8, 4, myHandler, 45, 45);
-
-        Button btnCo = new Button("27\nCo");
-        addButton(grid, btnCo, "Co", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 9, 4, myHandler, 45, 45);
-
-        Button btnNi = new Button("28\nNi");
-        addButton(grid, btnNi, "Ni", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 10, 4, myHandler, 45, 45);
-
-        Button btnCu = new Button("29\nCu");
-        addButton(grid, btnCu, "Cu", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 11, 4, myHandler, 45, 45);
-
-        Button btnZn = new Button("30\nZn");
-        addButton(grid, btnZn, "Zn", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 12, 4, myHandler, 45, 45);
-
-        Button btnGa = new Button("31\nGa");
-        addButton(grid, btnGa, "Ga", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 13, 4, myHandler, 45, 45);
-
-        Button btnGe = new Button("32\nGe");
-        addButton(grid, btnGe, "Ge", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 14, 4, myHandler, 45, 45);
-
-        Button btnAs = new Button("33\nAs");
-        addButton(grid, btnAs, "As", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 15, 4, myHandler, 45, 45);
-
-        Button btnSe = new Button("34\nSe");
-        addButton(grid, btnSe, "Se", "-fx-base: #bf2b00; "
-                + "-fx-font: bold 13 Georgia;", 16, 4, myHandler, 45, 45);
-
-        Button btnBr = new Button("35\nBr");
-        addButton(grid, btnBr, "Br", "-fx-base: #00ea6c; "
-                + "-fx-font: bold 13 Georgia;", 17, 4, myHandler, 45, 45);
-
-        Button btnKr = new Button("36\nKr");
-        addButton(grid, btnKr, "Kr", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 4, myHandler, 45, 45);
-
-        //Row 5 of the table
-        Button btnRb = new Button("37\nRb");
-        addButton(grid, btnRb, "Rb", "-fx-base: #065179; "
-                + "-fx-font: bold 13 Georgia;", 1, 5, myHandler, 45, 45);
-
-        Button btnSr = new Button("38\nSr");
-        addButton(grid, btnSr, "Sr", "-fx-base: #921d00; "
-                + "-fx-font: bold 13 Georgia;", 2, 5, myHandler, 45, 45);
-
-        Button btnY = new Button("39\nY");
-        addButton(grid, btnY, "Y", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 3, 5, myHandler, 45, 45);
-
-        Button btnZr = new Button("40\nZr");
-        addButton(grid, btnZr, "Zr", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 4, 5, myHandler, 45, 45);
-
-        Button btnNb = new Button("41\nNb");
-        addButton(grid, btnNb, "Nb", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 5, 5, myHandler, 45, 45);
-
-        Button btnMo = new Button("42\nMo");
-        addButton(grid, btnMo, "Mo", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 6, 5, myHandler, 45, 45);
-
-        Button btnTc = new Button("43\nTc");
-        addButton(grid, btnTc, "Tc", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 7, 5, myHandler, 45, 45);
-
-        Button btnRu = new Button("44\nRu");
-        addButton(grid, btnRu, "Ru", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 8, 5, myHandler, 45, 45);
-
-        Button btnRh = new Button("45\nRh");
-        addButton(grid, btnRh, "Rh", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 9, 5, myHandler, 45, 45);
-
-        Button btnPd = new Button("46\nPd");
-        addButton(grid, btnPd, "Pd", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 10, 5, myHandler, 45, 45);
-
-        Button btnAg = new Button("47\nAg");
-        addButton(grid, btnAg, "Ag", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 11, 5, myHandler, 45, 45);
-
-        Button btnCd = new Button("48\nCd");
-        addButton(grid, btnCd, "Cd", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 12, 5, myHandler, 45, 45);
-
-        Button btnIn = new Button("49\nIn");
-        addButton(grid, btnIn, "In", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 13, 5, myHandler, 45, 45);
-
-        Button btnSn = new Button("50\nSn");
-        addButton(grid, btnSn, "Sn", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 14, 5, myHandler, 45, 45);
-
-        Button btnSb = new Button("51\nSb");
-        addButton(grid, btnSb, "Sb", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 15, 5, myHandler, 45, 45);
-
-        Button btnTe = new Button("52\nTe");
-        addButton(grid, btnTe, "Te", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 16, 5, myHandler, 45, 45);
-
-        Button btnI = new Button("53\nI");
-        addButton(grid, btnI, "I", "-fx-base: #00ea6c; "
-                + "-fx-font: bold 13 Georgia;", 17, 5, myHandler, 45, 45);
-
-        Button btnXe = new Button("54\nXe");
-        addButton(grid, btnXe, "Xe", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 5, myHandler, 45, 45);
-
-        //Row 6 of the table
-        Button btnCs = new Button("55\nCs");
-        addButton(grid, btnCs, "Cs", "-fx-base: #065179; "
-                + "-fx-font: bold 13 Georgia;", 1, 6, myHandler, 45, 45);
-
-        Button btnBa = new Button("56\nBa");
-        addButton(grid, btnBa, "Ba", "-fx-base: #821d00; "
-                + "-fx-font: bold 13 Georgia;", 2, 6, myHandler, 45, 45);
-
-        Button btnHf = new Button("72\nHf");
-        addButton(grid, btnHf, "Hf", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 4, 6, myHandler, 45, 45);
-
-        Button btnTa = new Button("73\nTa");
-        addButton(grid, btnTa, "Ta", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 5, 6, myHandler, 45, 45);
-
-        Button btnW = new Button("74\nW");
-        addButton(grid, btnW, "W", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 6, 6, myHandler, 45, 45);
-
-        Button btnRe = new Button("75\nRe");
-        addButton(grid, btnRe, "Re", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 7, 6, myHandler, 45, 45);
-
-        Button btnOs = new Button("76\nOs");
-        addButton(grid, btnOs, "Os", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 8, 6, myHandler, 45, 45);
-
-        Button btnIr = new Button("77\nIr");
-        addButton(grid, btnIr, "Ir", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 9, 6, myHandler, 45, 45);
-
-        Button btnPt = new Button("78\nPt");
-        addButton(grid, btnPt, "Pt", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 10, 6, myHandler, 45, 45);
-
-        Button btnAu = new Button("79\nAu");
-        addButton(grid, btnAu, "Au", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 11, 6, myHandler, 45, 45);
-
-        Button btnHg = new Button("80\nHg");
-        addButton(grid, btnHg, "Hg", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 12, 6, myHandler, 45, 45);
-
-        Button btnTl = new Button("81\nTl");
-        addButton(grid, btnTl, "Tl", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 13, 6, myHandler, 45, 45);
-
-        Button btnPb = new Button("82\nPb");
-        addButton(grid, btnPb, "Pb", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 14, 6, myHandler, 45, 45);
-
-        Button btnBi = new Button("83\nBi");
-        addButton(grid, btnBi, "Bi", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 15, 6, myHandler, 45, 45);
-
-        Button btnPo = new Button("84\nPo");
-        addButton(grid, btnPo, "Po", "-fx-base: #ff6235; "
-                + "-fx-font: bold 13 Georgia;", 16, 6, myHandler, 45, 45);
-
-        Button btnAt = new Button("85\nAt");
-        addButton(grid, btnAt, "At", "-fx-base: #00ea6c; "
-                + "-fx-font: bold 13 Georgia;", 17, 6, myHandler, 45, 45);
-
-        Button btnRn = new Button("86\nRn");
-        addButton(grid, btnRn, "Rn", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 6, myHandler, 45, 45);
-
-        //Row 7 of the table
-        Button btnFr = new Button("87\nFr");
-        addButton(grid, btnFr, "Fr", "-fx-base: #065179; "
-                + "-fx-font: bold 13 Georgia;", 1, 7, myHandler, 45, 45);
-
-        Button btnRa = new Button("88\nRa");
-        addButton(grid, btnRa, "Ra", "-fx-base: #921d00; "
-                + "-fx-font: bold 13 Georgia;", 2, 7, myHandler, 45, 45);
-
-        Button btnRf = new Button("104\nRf");
-        addButton(grid, btnRf, "Rf", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 4, 7, myHandler, 45, 45);
-
-        Button btnDb = new Button("105\nDb");
-        addButton(grid, btnDb, "Db", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 5, 7, myHandler, 45, 45);
-
-        Button btnSg = new Button("106\nSg");
-        addButton(grid, btnSg, "Sg", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 6, 7, myHandler, 45, 45);
-
-        Button btnBh = new Button("107\nBh");
-        addButton(grid, btnBh, "Bh", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 7, 7, myHandler, 45, 45);
-
-        Button btnHs = new Button("108\nHs");
-        addButton(grid, btnHs, "Hs", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 8, 7, myHandler, 45, 45);
-
-        Button btnMt = new Button("109\nMt");
-        addButton(grid, btnMt, "Mt", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 9, 7, myHandler, 45, 45);
-
-        Button btnDs = new Button("110\nDs");
-        addButton(grid, btnDs, "Ds", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 10, 7, myHandler, 45, 45);
-
-        Button btnRg = new Button("111\nRg");
-        addButton(grid, btnRg, "Rg", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 11, 7, myHandler, 45, 45);
-
-        Button btnCn = new Button("112\nCn");
-        addButton(grid, btnCn, "Cn", "-fx-base: #ff8b00; "
-                + "-fx-font: bold 13 Georgia;", 12, 7, myHandler, 45, 45);
-
-        Button btnNh = new Button("113\nNh");
-        addButton(grid, btnNh, "Nh", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 13, 7, myHandler, 45, 45);
-
-        Button btnFl = new Button("114\nFl");
-        addButton(grid, btnFl, "Fl", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 14, 7, myHandler, 45, 45);
-
-        Button btnMc = new Button("115\nMc");
-        addButton(grid, btnMc, "Mc", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 15, 7, myHandler, 45, 45);
-
-        Button btnLv = new Button("116\nLv");
-        addButton(grid, btnLv, "Lv", "-fx-base: #0b98e4; "
-                + "-fx-font: bold 13 Georgia;", 16, 7, myHandler, 45, 45);
-
-        Button btnTs = new Button("117\nTs");
-        addButton(grid, btnTs, "Ts", "-fx-base: #00ea6c; "
-                + "-fx-font: bold 13 Georgia;", 17, 7, myHandler, 45, 45);
-
-        Button btnOg = new Button("118\nOg");
-        addButton(grid, btnOg, "Og", "-fx-base: #005c2b; "
-                + "-fx-font: bold 13 Georgia;", 18, 7, myHandler, 45, 45);
-
-        //elements 57-71 and 89-103
-        Button btnLa = new Button("57\nLa");
-        addButton(grid, btnLa, "La", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 4, 20, myHandler, 45, 45);
-
-        Button btnCe = new Button("58\nCe");
-        addButton(grid, btnCe, "Ce", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 5, 20, myHandler, 45, 45);
-
-        Button btnPr = new Button("59\nPr");
-        addButton(grid, btnPr, "Pr", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 6, 20, myHandler, 45, 45);
-
-        Button btnNd = new Button("60\nNd");
-        addButton(grid, btnNd, "Nd", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 7, 20, myHandler, 45, 45);
-
-        Button btnPm = new Button("61\nPm");
-        addButton(grid, btnPm, "Pm", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 8, 20, myHandler, 45, 45);
-
-        Button btnSm = new Button("62\nSm");
-        addButton(grid, btnSm, "Sm", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 9, 20, myHandler, 45, 45);
-
-        Button btnEu = new Button("63\nEu");
-        addButton(grid, btnEu, "Eu", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 10, 20, myHandler, 45, 45);
-
-        Button btnGd = new Button("64\nGd");
-        addButton(grid, btnGd, "Gd", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 11, 20, myHandler, 45, 45);
-
-        Button btnTb = new Button("65\nTb");
-        addButton(grid, btnTb, "Tb", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 12, 20, myHandler, 45, 45);
-
-        Button btnDy = new Button("66\nDy");
-        addButton(grid, btnDy, "Dy", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 13, 20, myHandler, 45, 45);
-
-        Button btnHo = new Button("67\nHo");
-        addButton(grid, btnHo, "Ho", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 14, 20, myHandler, 45, 45);
-
-        Button btnEr = new Button("68\nEr");
-        addButton(grid, btnEr, "Er", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 15, 20, myHandler, 45, 45);
-
-        Button btnTm = new Button("69\nTm");
-        addButton(grid, btnTm, "Tm", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 16, 20, myHandler, 45, 45);
-
-        Button btnYb = new Button("70\nYb");
-        addButton(grid, btnYb, "Yb", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 17, 20, myHandler, 45, 45);
-
-        Button btnLu = new Button("71\nLu");
-        addButton(grid, btnLu, "Lu", "-fx-base: #824700; "
-                + "-fx-font: bold 13 Georgia;", 18, 20, myHandler, 45, 45);
-
-        Button btnAc = new Button("89\nAc");
-        addButton(grid, btnAc, "Ac", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 4, 21, myHandler, 45, 45);
-
-        Button btnTh = new Button("90\nTh");
-        addButton(grid, btnTh, "Th", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 5, 21, myHandler, 45, 45);
-
-        Button btnPa = new Button("91\nPa");
-        addButton(grid, btnPa, "Pa", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 6, 21, myHandler, 45, 45);
-
-        Button btnU = new Button("92\nU");
-        addButton(grid, btnU, "U", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 7, 21, myHandler, 45, 45);
-
-        Button btnNp = new Button("93\nNp");
-        addButton(grid, btnNp, "Np", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 8, 21, myHandler, 45, 45);
-
-        Button btnPu = new Button("94\nPu");
-        addButton(grid, btnPu, "Pu", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 9, 21, myHandler, 45, 45);
-
-        Button btnAm = new Button("95\nAm");
-        addButton(grid, btnAm, "Am", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 10, 21, myHandler, 45, 45);
-
-        Button btnCm = new Button("96\nCm");
-        addButton(grid, btnCm, "Cm", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 11, 21, myHandler, 45, 45);
-
-        Button btnBk = new Button("97\nBk");
-        addButton(grid, btnBk, "Bk", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 12, 21, myHandler, 45, 45);
-
-        Button btnCf = new Button("98\nCf");
-        addButton(grid, btnCf, "Cf", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 13, 21, myHandler, 45, 45);
-
-        Button btnEs = new Button("99\nEs");
-        addButton(grid, btnEs, "Es", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 14, 21, myHandler, 45, 45);
-
-        Button btnFm = new Button("100\nFm");
-        addButton(grid, btnFm, "Fm", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 15, 21, myHandler, 45, 45);
-
-        Button btnMd = new Button("101\nMd");
-        addButton(grid, btnMd, "Md", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 16, 21, myHandler, 45, 45);
-
-        Button btnNo = new Button("102\nNo");
-        addButton(grid, btnNo, "No", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 17, 21, myHandler, 45, 45);
-
-        Button btnLr = new Button("103\nLr");
-        addButton(grid, btnLr, "Lr", "-fx-base: #ffa335; "
-                + "-fx-font: bold 13 Georgia;", 18, 21, myHandler, 45, 45);
+        // Read in file with element information
+        String fileName = "elementList.txt";
+        String line = null;
+
+        try {
+            FileReader fr = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(fr);
+            int i = 0; // index of element being read in
+            // Create button for each element in file
+            while ((line = br.readLine()) != null) {
+                addButton(grid, myHandler, btnList, line, i);
+                i++;
+            }
+            br.close();
+        }
+        catch (FileNotFoundException ex){
+            System.out.println("Unable to open file '" + fileName + "'");
+        }
 
         Label[] periods = new Label[18];
 
@@ -1068,21 +608,32 @@ public class TableGui {
             elementModel.displayModel(element);
         }
     };
-
+    
     /*
     * Constructs each button then places in the correct position in the GridPane to form
     * the periodic table.
     */
-    private static void addButton(GridPane grid, Button btn, String id, String style,
-            int x, int y, EventHandler handler, int sizeX, int sizeY) {
+    private static void addButton(GridPane grid, EventHandler handler, List<Button> btnList, String line, int index){
 
-        btn.setId(id);
-        btn.setStyle(style);
-        btn.setPrefWidth(40);
-        grid.add(btn, x, y);
-        btn.setOnAction(handler);
-        btn.setPrefSize(sizeX, sizeY);
+        // Get button details
+        String[] info = line.split(" "); 
+        String id = info[0];
+        Type type = Type.valueOf(info[1]);
+        int x = Integer.parseInt(info[2]);
+        int y = Integer.parseInt(info[3]);
+       
+        // Create button
+        String title = (index + 1) + "\n" + id;
+        Button tmpBtn = new Button(title);
+        tmpBtn.setId(id);
+        tmpBtn.setStyle("-fx-base: #" + type.color() + "; -fx-font: bold 13 Georgia;");
+        tmpBtn.setPrefWidth(40);
+        grid.add(tmpBtn, x, y);
+        tmpBtn.setOnAction(handler);
+        tmpBtn.setPrefSize(45, 45);
 
+        // add button to list
+        btnList.add(index, tmpBtn);
     }
 
     /*
